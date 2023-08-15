@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
+import { fillInput } from 'src/testing/component-queries.helper';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -22,17 +23,17 @@ describe('LoginComponent', () => {
 
   describe('validation', () => {
     it('should require email', () => {
-      component.loginForm.controls.email.setValue('');
+      fillInput(fixture, 'email', '');
       expect(component.loginForm.valid).toBeFalse();
     });
 
     it('should require a valid email', () => {
-      component.loginForm.controls.email.setValue('invalid');
+      fillInput(fixture, 'email', 'invalid');
       expect(component.loginForm.valid).toBeFalse();
     });
 
     it('should require password', () => {
-      component.loginForm.controls.password.setValue('');
+      fillInput(fixture, 'password', '');
       expect(component.loginForm.valid).toBeFalse();
     });
   });

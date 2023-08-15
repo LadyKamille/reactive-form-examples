@@ -1,25 +1,36 @@
-<main>
+<section>
   <h2>Log in to your account</h2>
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label for="email">Email*</label>
-    <input id="email" type="text" formControlName="email" />
-    <span *ngIf="loginForm.controls.email.errors?.['required']">
-      Email is required.
-    </span>
-    <span *ngIf="loginForm.controls.email.errors?.['pattern']">
-      Email is invalid.
-    </span>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput id="email" type="text" formControlName="email" />
+      <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+        Email is required.
+      </mat-error>
+      <mat-error *ngIf="loginForm.controls.email.hasError('email')">
+        Email is invalid.
+      </mat-error>
+    </mat-form-field>
 
-    <label for="password">Password*</label>
-    <input id="password" type="password" formControlName="password" />
-    <span *ngIf="loginForm.controls.email.errors?.['required']">
-      Password is required.
-    </span>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput id="password" [type]="hidePassword ? 'password' : 'text'" formControlName="password" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword = !hidePassword"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+        Password is required.
+      </mat-error>
+    </mat-form-field>
 
-    <input id="remember" type="checkbox" formControlName="remember" />
-    <label for="remember">Remember me for 90 days</label>
+    <mat-checkbox formControlName="remember">Remember me for 90 days</mat-checkbox>
 
-    <button type="submit">Log In</button>
+    <button mat-flat-button color="primary" type="submit">Log In</button>
   </form>
-</main>
+</section>
