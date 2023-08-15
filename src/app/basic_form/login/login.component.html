@@ -1,0 +1,25 @@
+<main>
+  <h2>Log in to your account</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="email">Email*</label>
+    <input id="email" type="text" formControlName="email" />
+    <span *ngIf="loginForm.controls.email.errors?.['required']">
+      Email is required.
+    </span>
+    <span *ngIf="loginForm.controls.email.errors?.['pattern']">
+      Email is invalid.
+    </span>
+
+    <label for="password">Password*</label>
+    <input id="password" type="password" formControlName="password" />
+    <span *ngIf="loginForm.controls.email.errors?.['required']">
+      Password is required.
+    </span>
+
+    <input id="remember" type="checkbox" formControlName="remember" />
+    <label for="remember">Remember me for 90 days</label>
+
+    <button type="submit">Log In</button>
+  </form>
+</main>
