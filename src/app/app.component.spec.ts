@@ -2,7 +2,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestBed } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './basic_form/login/login.component';
+import { LoginComponent } from './basic-form/login/login.component';
 import { MaterialTestingModule } from '../testing/material-testing.module';
 import { MatDividerModule } from '@angular/material/divider';
 
