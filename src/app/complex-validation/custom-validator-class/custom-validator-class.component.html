@@ -1,0 +1,70 @@
+<h2>D&D Character Creator</h2>
+<p>Simple form with custom validators</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="-stacked">
+  <mat-form-field>
+    <mat-label>Character Name</mat-label>
+
+    <input matInput type="text" formControlName="name" />
+    
+    <mat-error *ngIf="form.controls.name.hasError('required')">
+      Name is required.
+    </mat-error>
+
+    <mat-error *ngIf="form.controls.name.hasError('minlength')">
+      Name must be longer than 3 characters.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Race</mat-label>
+  
+    <input matInput type="text" formControlName="race" />
+
+    <mat-hint>
+      Only races from the base rules allowed.
+      <a href="https://www.dndbeyond.com/races" target="_blank">See available options</a>
+    </mat-hint>
+  
+    <mat-error *ngIf="form.controls.race.hasError('required')">
+      Race is required.
+    </mat-error>
+    <mat-error *ngIf="form.controls.race.hasError('playersHandbookRace')">
+      You can only choose a class from the players handbook!
+    </mat-error>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Class</mat-label>
+
+    <input matInput type="text" formControlName="characterClass" />
+    
+    <mat-hint>
+      Only classes from the base rules allowed.
+      <a href="https://www.dndbeyond.com/classes" target="_blank">See available options</a>
+    </mat-hint>
+    
+    <mat-error *ngIf="form.controls.characterClass.hasError('required')">
+      Class is required.
+    </mat-error>
+    <mat-error *ngIf="form.controls.characterClass.hasError('playersHandbookClass')">
+      You can only choose a class from the players handbook!
+    </mat-error>
+    <mat-error *ngIf="form.controls.characterClass.hasError('warlockRejector')">
+      You probably want to play something else...
+    </mat-error>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Weapons</mat-label>
+    <mat-select formControlName="weapons" multiple>
+      <mat-option *ngFor="let weapons of weaponsList" [value]="weapons">{{weapons}}</mat-option>
+    </mat-select>
+
+    <mat-error *ngIf="form.controls.weapons.hasError('maxWeapons')">
+      Okay you're getting greedy now. 3 is more than enough.
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" type="submit">Create Character</button>
+</form>

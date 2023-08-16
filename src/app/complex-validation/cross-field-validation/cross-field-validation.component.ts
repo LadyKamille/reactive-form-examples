@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DateForm, DateFormGroup } from '../interfaces';
+import { DateForm, DateFormGroup } from './interfaces';
 import { dateRangeValidator } from './validators';
 
 @Component({
