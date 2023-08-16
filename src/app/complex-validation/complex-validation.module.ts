@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 
-import { CrossFieldValidationComponent } from './custom-validators/cross-field-validation.component';
+import { CrossFieldValidationComponent } from './cross-field-validation/cross-field-validation.component';
 
 @NgModule({
   declarations: [CrossFieldValidationComponent],

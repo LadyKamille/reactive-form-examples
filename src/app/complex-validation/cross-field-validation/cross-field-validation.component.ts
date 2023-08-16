@@ -9,7 +9,7 @@ import { dateRangeValidator } from './validators';
   styleUrls: ['./cross-field-validation.component.scss'],
 })
 export class CrossFieldValidationComponent {
-  dateForm: DateForm = new FormGroup<DateFormGroup>(
+  form: DateForm = new FormGroup<DateFormGroup>(
     {
       startDate: new FormControl(null, Validators.required),
       endDate: new FormControl(null, Validators.required),

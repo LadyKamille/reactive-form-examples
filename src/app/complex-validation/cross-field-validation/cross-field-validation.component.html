@@ -1,6 +1,7 @@
 <h2>Date Range Validator</h2>
+<p>Validates that the start date is before the end date.</p>
 
-<form [formGroup]="dateForm">
+<form [formGroup]="form">
   <mat-form-field>
     <mat-label>Start Date</mat-label>
     <input matInput [matDatepicker]="startPicker" formControlName="startDate">
@@ -17,5 +18,5 @@
     <mat-datepicker #endPicker></mat-datepicker>
   </mat-form-field>
 
-  <mat-error *ngIf="dateForm.hasError('dateRange')">Start date must be before end date!</mat-error>
+  <mat-error *ngIf="form.hasError('dateRange')">Start date must be before end date!</mat-error>
 </form>
