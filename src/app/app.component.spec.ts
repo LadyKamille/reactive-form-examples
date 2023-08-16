@@ -1,12 +1,16 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestBed } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
+import { LoginComponent } from './basic_form/login/login.component';
+import { MaterialTestingModule } from '../testing/material-testing.module';
+import { MatDividerModule } from '@angular/material/divider';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
+      imports: [LoginComponent, MatDividerModule],
     }).compileComponents();
   });
 
@@ -20,12 +24,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('reactive-form-examples');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('reactive-form-examples app is running!');
   });
 });

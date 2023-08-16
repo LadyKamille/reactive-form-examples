@@ -18,3 +18,11 @@ export function fillInput(
     console.debug(`Input element with ${inputName} not found`);
   }
 }
+
+export function getByTestId(
+  fixture: ComponentFixture<any>,
+  id: string
+): HTMLElement {
+  return fixture.debugElement.query(By.css(`[data-testid=${id}]`))
+    ?.nativeElement;
+}
