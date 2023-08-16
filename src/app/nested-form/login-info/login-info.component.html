@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit.emit()" [formGroup]="parentForm.controls.loginInfo" class="-stacked">
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" type="password" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Confirm Password</mat-label>
+    <input matInput formControlName="passwordConfirmation" type="password" />
+  </mat-form-field>
+
+  <mat-checkbox formControlName="acceptedTOS">Accept Terms of Service</mat-checkbox>
+
+  <button type="submit" mat-flat-button color="accent" [disabled]="parentForm.controls.loginInfo.invalid">Sign Up</button>
+</form>

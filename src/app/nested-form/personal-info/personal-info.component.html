@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit.emit()" [formGroup]="parentForm.controls.personalInfo" class="-stacked">
+  <mat-form-field>
+    <mat-label>Role</mat-label>
+    <input matInput formControlName="roleId" type="number" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName" type="text" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName" type="text" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Campus</mat-label>
+    <input matInput formControlName="campus" type="text" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Professor Role</mat-label>
+    <input matInput formControlName="professorRole" type="text" />
+  </mat-form-field>
+
+  <button type="submit" mat-flat-button color="primary" [disabled]="parentForm.controls.personalInfo.invalid">Continue</button>
+</form>

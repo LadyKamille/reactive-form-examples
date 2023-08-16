@@ -5,14 +5,19 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './basic-form/login/login.component';
+import { NestedFormModule } from './nested-form/nested-form.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    LoginComponent,
     BrowserAnimationsModule,
     MatDividerModule,
+
+    NestedFormModule,
+
+    // Standalone
+    LoginComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
