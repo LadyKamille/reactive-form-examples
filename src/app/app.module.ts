@@ -6,6 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './basic-form/login/login.component';
 import { NestedFormModule } from './nested-form/nested-form.module';
+import { ComplexValidationModule } from './complex-validation/complex-validation.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { NestedFormModule } from './nested-form/nested-form.module';
     BrowserAnimationsModule,
     MatDividerModule,
 
+    ComplexValidationModule,
     NestedFormModule,
 
     // Standalone
