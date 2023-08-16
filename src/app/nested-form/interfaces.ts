@@ -2,6 +2,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 export type Step = 'personalInfo' | 'loginInfo';
 
+export type SignupForm = FormGroup<SignupFormGroup>;
+
 export interface SignupFormGroup {
   personalInfo: FormGroup<PersonalInfoFormGroup>;
   loginInfo: FormGroup<LoginInfoFormGroup>;

@@ -1,6 +1,19 @@
 import { ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
+export function clickSubmitButton(fixture: ComponentFixture<any>): void {
+  const submitButton: HTMLButtonElement = fixture.debugElement.query(
+    By.css('button[type=submit]')
+  )?.nativeElement;
+
+  if (submitButton) {
+    submitButton.click();
+    fixture.detectChanges();
+  } else {
+    console.debug('Submit button not found');
+  }
+}
+
 export function fillInput(
   fixture: ComponentFixture<any>,
   inputName: string,

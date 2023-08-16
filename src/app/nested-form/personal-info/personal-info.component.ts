@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
 import { SignupFormGroup } from '../interfaces';
 
 @Component({
@@ -11,8 +12,4 @@ export class PersonalInfoComponent {
   @Input() parentForm!: FormGroup<SignupFormGroup>;
 
   @Output() onSubmit: EventEmitter<void> = new EventEmitter<void>();
-
-  ngOnInit(): void {
-    console.log('PersonalInfoComponent parentForm', this.parentForm);
-  }
 }

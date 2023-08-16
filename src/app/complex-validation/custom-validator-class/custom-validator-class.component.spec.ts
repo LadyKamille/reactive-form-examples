@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MaterialTestingModule } from '../../../testing/material-testing.module';
 
 import { CustomValidatorClassComponent } from './custom-validator-class.component';
 
@@ -8,9 +11,9 @@ describe('CustomValidatorClassComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomValidatorClassComponent ]
-    })
-    .compileComponents();
+      declarations: [CustomValidatorClassComponent],
+      imports: [FormsModule, ReactiveFormsModule, MaterialTestingModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CustomValidatorClassComponent);
     component = fixture.componentInstance;
