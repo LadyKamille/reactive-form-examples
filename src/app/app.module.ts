@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './basic-form/login/login.component';
 import { NestedFormModule } from './nested-form/nested-form.module';
 import { ComplexValidationModule } from './complex-validation/complex-validation.module';
+import { ConditionalRenderingComponent } from './conditional-rendering/conditional-rendering.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { ComplexValidationModule } from './complex-validation/complex-validation
     NestedFormModule,
 
     // Standalone
+    ConditionalRenderingComponent,
     LoginComponent,
   ],
   providers: [],
